@@ -1,0 +1,382 @@
+body {
+background: linear-gradient(135deg, #e3f2fd, #f4f6f9, #ffffff);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #243b55;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    color: #555;
+    font-size: 18px;
+}
+
+h2 {
+    color: #243b55;
+}
+.card {
+    background-color: white;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 12px;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.card h3 {
+    color: #555;
+}
+
+.card h2 {
+    color: #2196F3;
+    font-size: 30px;
+}
+.expense-form {
+    background-color: white;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 350px;
+}
+
+.expense-form input {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.expense-form select {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.expense-form button {
+    background-color: #2196F3;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.expense-form button:hover {
+    background-color: #1565C0;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .card,
+    .expense-form {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .expense-form input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .card {
+        padding: 18px;
+    }
+}
+#expenseList button {
+    padding: 8px 14px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+#expenseList button:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
+}
+#expenseList button:first-of-type {
+    background-color: #2196F3;
+    color: white;
+}
+
+#expenseList button:last-of-type {
+    background-color: #e53935;
+    color: white;
+}
+#expenseList {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    list-style: none;
+}
+
+#expenseList li {
+    padding: 12px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+#searchExpense,
+#categoryFilter {
+    padding: 12px;
+    margin: 10px 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+
+#searchExpense:focus,
+#categoryFilter:focus {
+    border-color: #2196F3;
+}
+.card {
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+.dashboard-cards .card {
+    width: auto;
+    margin-top: 0;
+}
+.dashboard-cards {
+    margin-top: 20px;
+}
+
+h2 {
+    color: #1e4e79;
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background-color: #243b55;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    position: sticky;
+top: 0;
+z-index: 1000;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #64b5f6;
+}
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 12px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+}
+.dark-mode {
+    background: #121212;
+    color: white;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p {
+    color: white;
+}
+
+.dark-mode .card,
+.dark-mode .expense-form,
+.dark-mode #expenseList {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.dark-mode input,
+.dark-mode select {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+}
+
+.dark-mode .navbar {
+    background-color: #000;
+}
+button {
+    background-color: #243b55;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #1565c0;
+}
+* {
+    box-sizing: border-box;
+}
+
+.dashboard-cards {
+    width: 100%;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.dashboard-cards .card {
+    min-width: 0;
+}
+
+@media (max-width: 900px) {
+    .dashboard-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.navbar a {
+    padding: 8px;
+}
+
+.card canvas {
+    max-height: 300px;
+}
+
+#profile {
+    max-width: 100%;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+:root {
+    --primary: #14243d;
+    --secondary: #203b60;
+    --accent: #d4a84f;
+    --background: #f3f6fb;
+    --surface: #ffffff;
+    --text: #1c2b40;
+    --muted: #64748b;
+    --shadow: 0 5px 20px rgba(20, 36, 61, 0.08);
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+h1, h2 {
+    color: var(--primary);
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid #e4e9f1;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 8px;
+}
+
+button:hover {
+    background: var(--secondary);
+    border-color: var(--accent);
+}
+
+.navbar {
+    background: var(--primary);
+    border: 1px solid rgba(212, 168, 79, 0.4);
+    border-radius: 12px;
+}
+
+.navbar a:hover {
+    color: var(--accent);
+}
+
+.dashboard-cards .card {
+    padding: 24px;
+}
+.dashboard-cards .card {
+    padding: 18px;
+    min-height: 135px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 6px;
+    box-shadow: 0 4px 15px rgba(20, 36, 61, 0.08);
+    transition: all 0.3s ease;
+}
+.dashboard-cards .card h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 8px 0;
+}

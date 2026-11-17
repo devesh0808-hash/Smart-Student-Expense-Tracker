@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Student Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Smart Student Expense Tracker</h1>
+<nav class="navbar">
+    <a href="#dashboard">Dashboard</a>
+    <a href="#addExpense">Add Expense</a>
+    <a href="#history">Expense History</a>
+    <a href="#reports">Reports</a>
+    <a href="#profile">Profile</a>
+    <button id="darkModeButton" onclick="toggleDarkMode()">
+    🌙 Dark Mode
+</button>
+
+</nav>
+
+
+    <p>Welcome to your personal expense manager!</p>
+<h2 id="dashboard">My Dashboard</h2>
+    <div class="dashboard-cards">
+    <div class="card">
+    <h3>Monthly Budget</h3>
+    <input type="number" id="monthlyBudget" placeholder="Enter monthly budget">
+    <button onclick="setBudget()">Set Budget</button>
+<button onclick="resetBudget()">Reset Budget</button>
+    <h3 id="budgetAmount">Budget: ₹0</h3>
+    <h3 id="remainingBudget">Remaining: ₹0</h3>
+    <progress id="budgetProgress" value="0" max="100"></progress>
+<p id="budgetStatus">Budget is under control!</p>
+</div>
+    <div class="card">
+    <h3>Total Expenses</h3>
+    <h2 id="totalExpenses">₹0</h2>
+    <p>All time</p>
+</div>
+<div class="card">
+    <h3>Monthly Expenses</h3>
+    <h2 id="monthlytotal">₹0</h2>
+</div>
+<div class="card">
+    <h3>Expense Category Summary</h3>
+    <ul id="categorySummary"></ul>
+</div>
+</div>
+<!-- <h2 id="addExpense">Add New Expense</h2> -->
+<div class="card" id="profile">
+    <h2>Student Profile</h2>
+<img id="profilePicture"
+     src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+     alt="Profile Picture"
+     style="width:120px; height:120px; border-radius:50%; object-fit:cover;">
+<input type="file" id="profileImage" accept="image/*">
+
+<button onclick="uploadProfilePicture()">Upload Picture</button>
+<button onclick="removeProfilePicture()">Remove Picture</button>
+
+    <input type="text" id="studentName" placeholder="Enter your name">
+
+    <input type="text" id="collegeName" placeholder="Enter college name">
+
+    <input type="text" id="courseName" placeholder="Enter course">
+
+    <input type="text" id="studentYear" placeholder="Enter academic year">
+
+    <button onclick="saveProfile()">Save Profile</button>
+    <button onclick="editProfile()">Edit Profile</button>
+
+    <h3 id="welcomeMessage">Welcome, Student!</h3>
+</div>
+<div class="expense-form">
+
+    <input type="text" id="expenseName" placeholder="Expense Name">
+
+    <input type="number" id="expenseAmount" placeholder="Amount">
+
+    <select id="expenseCategory">
+        <option value="">Select Category</option>
+        <option value="Food">Food</option>
+        <option value="Travel">Travel</option>
+        <option value="Education">Education</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <button onclick="addExpense()">Add Expense</button>
+
+</div>
+
+<h2 id="history">Expense History</h2>
+<input type="text" id="searchExpense" placeholder="Search expenses..." oninput="searchExpenses()">
+<select id="categoryFilter" onchange="filterExpenses()">
+    <option value="">All Categories</option>
+    <option value="Food">Food</option>
+    <option value="Travel">Travel</option>
+    <option value="Education">Education</option>
+    <option value="Shopping">Shopping</option>
+    <option value="Other">Other</option>
+</select>
+<ul id="expenseList">
+</ul>
+<h2 id="addExpense">Add New Expense</h2>
+<h2>Expense Analytics</h2>
+
+<div class="card">
+    <h3>Expense Category Chart</h3>
+    <canvas id="categoryChart"></canvas>
+</div>
+
+<div class="card">
+    <h3>Monthly Spending Chart</h3>
+    <canvas id="monthlyChart"></canvas>
+</div>
+
+<div class="card" id="reports">
+    <h3>View Your Reports</h3>
+
+    <select id="reportPeriod">
+        <option value="daily">Daily Report</option>
+        <option value="weekly">Weekly Report</option>
+        <option value="monthly">Monthly Report</option>
+    </select>
+
+    <button onclick="generateReport()">Generate Report</button>
+    <button onclick="downloadReport()">Download Report</button>
+
+    <h3 id="reportTotal">Total: ₹0</h3>
+
+    <ul id="reportList"></ul>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
